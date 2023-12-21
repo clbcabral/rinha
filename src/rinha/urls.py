@@ -19,8 +19,8 @@ from django.urls import path, include
 from core import views
 
 urlpatterns = [
-    path('pessoas/', views.CriarPessoaView.as_view(), name='criar-pessoa'),
-    path('pessoas/<uuid:pk>', views.RecuperarPessoaView.as_view(), name='recuperar-pessoa'),
-    path('contagem-pessoas/', views.contar_pessoas, name='contar-pessoas'),
-    path('admin/', admin.site.urls),
+    path('pessoas', views.pessoas, name='criar-pessoa'),
+    path('pessoas/<uuid:pk>', views.recuperar_pessoa, name='recuperar-pessoa'),
+    path('contagem-pessoas', views.contar_pessoas, name='contar-pessoas'),
+    path('admin', admin.site.urls),
 ]

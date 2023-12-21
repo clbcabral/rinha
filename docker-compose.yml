@@ -20,6 +20,7 @@ services:
     env_file: .env
     depends_on:
       - db
+      - redis
     expose:
       - 8000
     deploy:
@@ -33,6 +34,7 @@ services:
     env_file: .env
     depends_on:
       - db
+      - redis
     expose:
       - 8000
     deploy:
@@ -49,5 +51,14 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.75'
-          memory: '1.5GB'
+          cpus: '0.50'
+          memory: '1GB'
+  redis: 
+    image: redis
+    expose:
+      - 6379
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: '0.5GB'
