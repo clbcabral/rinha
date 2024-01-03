@@ -44,7 +44,10 @@ services:
     image: postgres:14
     container_name: rinha_db
     env_file: .env
+    ports:
+      - 5432:5432
     volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
       - ./volumes/postgres:/var/lib/postgresql/data
     deploy:
       resources:
@@ -54,5 +57,6 @@ services:
   pgadmin:
     image: dpage/pgadmin4
     container_name: rinha_pg
+    env_file: .env
     ports:
       - 8888:80

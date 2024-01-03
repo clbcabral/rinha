@@ -1,2 +1,6 @@
 Flask==3.0.0
-psycopg2-binary==2.9.9
+Flask-UUID==0.2
+psycopg==3.1.16
+psycopg-binary==3.1.16
+psycopg-pool==3.2.0
+gunicorn==21.2.0

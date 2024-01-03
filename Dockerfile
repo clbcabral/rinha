@@ -2,7 +2,7 @@ FROM python:alpine
 
 WORKDIR /opt/app
 
-RUN apk update && apk add postgresql-dev
+#RUN apk update && apk add postgresql-dev
 
 ADD . .
 

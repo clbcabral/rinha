@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 cd src
-python api.py
+gunicorn -b 0.0.0.0 'app:app'
